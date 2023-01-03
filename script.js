@@ -23,9 +23,12 @@
   function get_random(list) {
     return list[Math.floor(Math.random() * list.length)];
   }
-  const randomDestination = get_random(destinations); // get random tag
+  const randomDestination = get_random(destinations);
+  // Define time interval 10 sec ... 30 sec [reload every ~20 seconds +/- 10 seconds]
+  function getTime() {
+    return 10000 + Math.round(Math.random() * 20000);
+  }
   console.log("Izabrao hashtag...", randomDestination);
-
   $(window).on("load", function () {
     console.log("Window loaded");
     setTimeout(function () {
@@ -58,6 +61,6 @@
           }, 12000);
         }
       }, 2000);
-    }, 20000);
+    }, getTime());
   });
 })();
