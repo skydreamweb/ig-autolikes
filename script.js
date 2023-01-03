@@ -1,15 +1,6 @@
 (function () {
   "use strict";
 
-  // Kreiraj Start button
-  const input = document.createElement("input");
-  input.type = "button";
-  input.setAttribute("id", "buttongo");
-  input.setAttribute("style", "position:absolute;top:30px;right:20px;"); // font-size:18px;
-  input.value = "Go";
-  input.onclick = button_go_click;
-  document.body.appendChild(input);
-
   console.log("Skripta pokrenuta...");
   const min_likes = 1; // minimal number of likes a post needs to have in order to be liked // 0 to disable the limit
   const max_likes = 200; /// maximal number of likes a post can have in order to be liked // 0 to disable the limit
