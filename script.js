@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  console.log("Skripta pokrenuta...");
+  console.log("Script started...");
   const min_likes = 1; // minimal number of likes a post needs to have in order to be liked // 0 to disable the limit
   const max_likes = 200; /// maximal number of likes a post can have in order to be liked // 0 to disable the limit
   const destinations = [
@@ -28,14 +28,13 @@
   function getTime() {
     return 10000 + Math.round(Math.random() * 20000);
   }
-  console.log("Izabrao hashtag...", randomDestination);
+  console.log("Chosen hashtag...", randomDestination);
   $(window).on("load", function () {
     console.log("Window loaded");
     setTimeout(function () {
       const divs = document.querySelectorAll(
         "._ac7v._aang > ._aabd._aa8k._aanf > a"
       );
-      console.log("Proslo je  10 sekundi");
       get_random(divs).click();
       setTimeout(function () {
         let likes = document.getElementsByClassName(
@@ -53,7 +52,7 @@
           (+numberOfLikes > min_likes || +longNumberOfLikes > 0) &&
           isRed === "#fafafa"
         ) {
-          console.log("Lajkovao");
+          console.log("Liked!");
           let defD = document.querySelector("span._aamw > button");
           defD.click();
           setTimeout(function () {
